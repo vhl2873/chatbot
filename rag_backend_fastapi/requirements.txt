@@ -1,27 +1,27 @@
 # FastAPI và server
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-python-multipart==0.0.6
-pydantic==2.5.0
-pydantic-settings==2.1.0
+fastapi==0.115.0
+uvicorn[standard]==0.32.1
+python-multipart==0.0.12
+pydantic==2.10.0
+pydantic-settings==2.6.0
 
 # Firebase
-firebase-admin==6.4.0
+firebase-admin==6.5.0
 
 # Vector Database
-chromadb==0.4.22
+chromadb==0.5.20
 
 # Embeddings
 sentence-transformers>=2.3.0
 
 # LLM
-google-generativeai==0.3.2
+google-generativeai==0.8.3
 
 # File processing
 PyPDF2==3.0.1
-python-docx==1.1.0
+python-docx==1.1.2
 
 # Utilities
-python-dotenv==1.0.0
+python-dotenv==1.0.1
 numpy>=1.26.0
 
