@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chatbot - Upload & Chat</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 RAG Chatbot</h1>
+            <p>Upload tài liệu và hỏi đáp thông minh</p>
+        </div>
+
+        <div class="content">
+            <!-- Upload Section -->
+            <div class="section">
+                <h2>📤 Upload Tài liệu</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📄</div>
+                    <div class="upload-text">
+                        <strong>Kéo thả file vào đây</strong><br>
+                        hoặc click để chọn file
+                    </div>
+                    <div class="upload-text" style="font-size: 0.9em; margin-top: 10px;">
+                        Hỗ trợ: PDF, TXT, MD, DOCX
+                    </div>
+                    <input type="file" id="fileInput" class="file-input" accept=".pdf,.txt,.md,.docx">
+                </div>
+
+                <div class="file-info" id="fileInfo">
+                    <div class="file-name" id="fileName"></div>
+                    <div class="file-size" id="fileSize"></div>
+                </div>
+
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <button class="btn" id="uploadBtn" disabled>Upload Tài liệu</button>
+
+                <div class="upload-status" id="uploadStatus"></div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="section">
+                <h2>💬 Chat với RAG</h2>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot">
+                            <div>Xin chào! Hãy upload tài liệu trước, sau đó bạn có thể hỏi đáp về nội dung trong tài liệu.</div>
+                            <div class="message-time" id="welcomeTime"></div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input 
+                            type="text" 
+                            class="chat-input" 
+                            id="chatInput" 
+                            placeholder="Nhập câu hỏi của bạn..."
+                            disabled
+                        >
+                        <button class="btn chat-send-btn" id="sendBtn" disabled>
+                            <span id="sendBtnText">Gửi</span>
+                            <span class="loading" id="sendLoading" style="display: none;"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div class="history-section">
+                    <button class="btn history-toggle" id="historyToggle">📜 Xem Lịch sử</button>
+                    <div class="history-list" id="historyList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
+

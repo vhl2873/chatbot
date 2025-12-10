@@ -1,8 +1,11 @@
 """FastAPI Main Application"""
 import logging
+from pathlib import Path
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 from config import settings
 from api.routes import router
 
@@ -66,17 +69,34 @@ app.add_middleware(
 # Include routers
 app.include_router(router, prefix=settings.API_V1_PREFIX, tags=["RAG API"])
 
+# Mount static files
+static_dir = settings.BASE_DIR / "static"
+if static_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 
-@app.get("/")
+# Setup templates
+templates_dir = settings.BASE_DIR / "templates"
+index_html_path = templates_dir / "index.html" if templates_dir.exists() else None
+
+
+@app.get("/", response_class=HTMLResponse)
 async def root():
-    """Root endpoint"""
-    return {
-        "message": "RAG Backend API",
-        "version": settings.APP_VERSION,
-        "status": "running",
-        "docs": "/docs",
-        "health": f"{settings.API_V1_PREFIX}/health"
-    }
+    """Root endpoint - Serve web interface"""
+    if index_html_path and index_html_path.exists():
+        with open(index_html_path, "r", encoding="utf-8") as f:
+            return HTMLResponse(content=f.read())
+    return HTMLResponse("""
+    <html>
+        <head><title>RAG Backend API</title></head>
+        <body>
+            <h1>RAG Backend API</h1>
+            <p>Version: {}</p>
+            <p>Status: running</p>
+            <p><a href="/docs">API Documentation</a></p>
+            <p><a href="{}/health">Health Check</a></p>
+        </body>
+    </html>
+    """.format(settings.APP_VERSION, settings.API_V1_PREFIX))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,77 @@
+MÁY HỌC VÀ TRÍ TUỆ NHÂN TẠO
+
+Trí tuệ nhân tạo (AI) và Máy học (Machine Learning) là hai lĩnh vực công nghệ đang phát triển mạnh mẽ, thay đổi cách chúng ta tương tác với thế giới.
+
+KHÁI NIỆM CƠ BẢN
+
+Trí tuệ nhân tạo là khả năng của máy móc bắt chước các chức năng nhận thức của con người như học tập và giải quyết vấn đề. Máy học là một nhánh của AI, tập trung vào việc phát triển các thuật toán cho phép máy tính học từ dữ liệu.
+
+CÁC LOẠI MÁY HỌC
+
+1. Supervised Learning (Học có giám sát)
+   - Sử dụng dữ liệu đã được gán nhãn để huấn luyện model
+   - Ví dụ: Phân loại email spam, nhận dạng hình ảnh
+   - Thuật toán phổ biến: Linear Regression, Decision Trees, Neural Networks
+
+2. Unsupervised Learning (Học không giám sát)
+   - Tìm kiếm các mẫu trong dữ liệu chưa được gán nhãn
+   - Ví dụ: Phân cụm khách hàng, giảm chiều dữ liệu
+   - Thuật toán phổ biến: K-means, PCA, Autoencoders
+
+3. Reinforcement Learning (Học tăng cường)
+   - Học thông qua tương tác với môi trường và nhận phần thưởng/phạt
+   - Ví dụ: Game AI, robot navigation
+   - Thuật toán phổ biến: Q-Learning, Deep Q-Networks
+
+DEEP LEARNING
+
+Deep Learning là một nhánh của Machine Learning sử dụng các mạng neural với nhiều lớp (deep neural networks). Các ứng dụng chính bao gồm:
+
+- Computer Vision: Nhận dạng hình ảnh, xử lý video
+- Natural Language Processing: Xử lý ngôn ngữ tự nhiên, dịch máy
+- Speech Recognition: Nhận dạng giọng nói
+- Recommendation Systems: Hệ thống gợi ý
+
+CÁC FRAMEWORK PHỔ BIẾN
+
+1. TensorFlow: Framework mã nguồn mở của Google, phù hợp cho production
+2. PyTorch: Framework của Facebook, phổ biến trong nghiên cứu
+3. Scikit-learn: Thư viện Python cho machine learning cổ điển
+4. Keras: High-level API cho neural networks
+
+QUY TRÌNH PHÁT TRIỂN ML
+
+1. Thu thập và làm sạch dữ liệu
+2. Khám phá và phân tích dữ liệu (EDA)
+3. Feature engineering
+4. Chọn và huấn luyện model
+5. Đánh giá và tối ưu hóa
+6. Triển khai model vào production
+7. Monitoring và cập nhật model
+
+ỨNG DỤNG THỰC TẾ
+
+AI và ML đang được ứng dụng rộng rãi trong nhiều lĩnh vực:
+
+- Y tế: Chẩn đoán bệnh, phát hiện ung thư
+- Tài chính: Phát hiện gian lận, giao dịch tự động
+- Giao thông: Xe tự lái, tối ưu hóa tuyến đường
+- Giáo dục: Học tập cá nhân hóa, chấm điểm tự động
+- Thương mại điện tử: Recommendation systems, pricing optimization
+
+THÁCH THỨC VÀ HẠN CHẾ
+
+- Cần lượng dữ liệu lớn để huấn luyện hiệu quả
+- Bias trong dữ liệu có thể dẫn đến kết quả không công bằng
+- Khó giải thích quyết định của các model phức tạp
+- Chi phí tính toán cao
+- Vấn đề về privacy và bảo mật dữ liệu
+
+XU HƯỚNG TƯƠNG LAI
+
+- Large Language Models (LLMs): GPT, BERT, và các model ngôn ngữ lớn
+- Multimodal AI: Kết hợp text, image, audio
+- AutoML: Tự động hóa quy trình machine learning
+- Edge AI: Chạy AI trên thiết bị edge
+- AI Ethics: Đảm bảo AI được phát triển và sử dụng có trách nhiệm
+

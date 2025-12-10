@@ -1,0 +1,99 @@
+KIẾN TRÚC FASTAPI VÀ BEST PRACTICES
+
+FastAPI là một framework web hiện đại và nhanh chóng được xây dựng cho Python, dựa trên các type hints tiêu chuẩn. Framework này được thiết kế để xây dựng các API RESTful với hiệu suất cao.
+
+ĐẶC ĐIỂM NỔI BẬT
+
+1. Hiệu suất cao: FastAPI là một trong những framework nhanh nhất cho Python, có thể so sánh với NodeJS và Go.
+
+2. Tự động tạo tài liệu: FastAPI tự động tạo tài liệu API tương tác (Swagger UI) dựa trên các type hints và docstrings.
+
+3. Type hints: Sử dụng type hints của Python để xác thực dữ liệu tự động, giảm lỗi và cải thiện khả năng đọc code.
+
+4. Validation tự động: Dựa trên Pydantic để xác thực dữ liệu request và response một cách tự động.
+
+5. Async/Await: Hỗ trợ đầy đủ cho async/await, cho phép xử lý nhiều request đồng thời.
+
+CẤU TRÚC DỰ ÁN
+
+Một dự án FastAPI thường được tổ chức theo cấu trúc sau:
+
+- main.py: File chính chứa ứng dụng FastAPI và các route cơ bản
+- api/: Thư mục chứa các router và endpoint
+- models/: Thư mục chứa các Pydantic models
+- services/: Thư mục chứa business logic
+- config.py: File cấu hình ứng dụng
+- requirements.txt: Danh sách các dependencies
+
+ROUTING VÀ ENDPOINTS
+
+FastAPI sử dụng decorators để định nghĩa routes. Mỗi route có thể nhận các tham số từ path, query string, hoặc request body.
+
+Ví dụ về một endpoint GET:
+```python
+@router.get("/items/{item_id}")
+async def read_item(item_id: int):
+    return {"item_id": item_id}
+```
+
+Ví dụ về một endpoint POST:
+```python
+@router.post("/items/")
+async def create_item(item: Item):
+    return {"item": item}
+```
+
+MIDDLEWARE
+
+FastAPI hỗ trợ middleware để xử lý các request trước khi chúng đến route handler. Middleware phổ biến bao gồm:
+- CORS middleware: Cho phép cross-origin requests
+- Authentication middleware: Xác thực người dùng
+- Logging middleware: Ghi log các request
+
+DEPLOYMENT
+
+FastAPI có thể được deploy bằng nhiều cách:
+- Uvicorn: ASGI server phổ biến nhất cho FastAPI
+- Gunicorn với Uvicorn workers: Cho production environments
+- Docker: Container hóa ứng dụng
+- Cloud platforms: Render, Heroku, AWS, Google Cloud
+
+BẢO MẬT
+
+FastAPI cung cấp nhiều tính năng bảo mật:
+- OAuth2 với Password flow
+- JWT tokens
+- API keys
+- CORS configuration
+- SQL injection protection thông qua ORM
+
+TESTING
+
+FastAPI có TestClient tích hợp để test các endpoint:
+```python
+from fastapi.testclient import TestClient
+client = TestClient(app)
+response = client.get("/items/1")
+```
+
+BEST PRACTICES
+
+1. Sử dụng type hints cho tất cả các function parameters và return types
+2. Tách biệt business logic vào services layer
+3. Sử dụng Pydantic models cho request/response validation
+4. Implement proper error handling với HTTPException
+5. Sử dụng dependency injection cho các dependencies
+6. Logging đầy đủ cho debugging và monitoring
+7. Sử dụng environment variables cho configuration
+8. Implement health check endpoints
+9. Sử dụng async/await cho I/O operations
+10. Document code với docstrings
+
+PERFORMANCE TIPS
+
+- Sử dụng async/await cho database queries và external API calls
+- Cache các kết quả tính toán tốn kém
+- Sử dụng connection pooling cho databases
+- Optimize database queries
+- Sử dụng background tasks cho các tác vụ không cần thiết phải chờ
+
