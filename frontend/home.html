@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Chatbot Đại học Vinh</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="home-content">
+            <h1 class="home-title" id="homeTitle">Chào mừng đến với</h1>
+            <h2 class="home-subtitle" id="homeSubtitle">Đại học Vinh</h2>
+            <img id="homeAvatar" src="" alt="Chatbot" class="home-avatar">
+
+            <div class="chat-faces-container">
+                <div class="chat-faces-list" id="chatFacesList"></div>
+                <p class="chat-faces-hint">Chọn chatbot để bắt đầu</p>
+            </div>
+
+            <button class="start-button" id="startButton">Bắt đầu</button>
+
+            <div class="user-info-card" id="userInfoCard" style="display: none;">
+                <h3>Thông tin người dùng</h3>
+                <p id="userName">Tên: </p>
+                <p id="userEmail">Email: </p>
+                <p id="userPhone">Số điện thoại: </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
+

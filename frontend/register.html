@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - Chatbot Đại học Vinh</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <h1 class="register-title">Đăng ký</h1>
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            <form id="registerForm">
+                <div class="input-group">
+                    <span class="icon">✉</span>
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div id="emailError" class="error-text" style="display: none;"></div>
+
+                <div class="input-group">
+                    <span class="icon">👤</span>
+                    <input type="text" id="username" placeholder="Tên người dùng" required>
+                </div>
+                <div id="usernameError" class="error-text" style="display: none;"></div>
+
+                <div class="input-group">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="password" placeholder="Mật khẩu" required>
+                </div>
+                <div id="passwordError" class="error-text" style="display: none;"></div>
+
+                <div class="input-group">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu" required>
+                </div>
+                <div id="confirmPasswordError" class="error-text" style="display: none;"></div>
+
+                <div class="input-group">
+                    <span class="icon">📱</span>
+                    <input type="tel" id="phone" placeholder="Số điện thoại" required>
+                </div>
+                <div id="phoneError" class="error-text" style="display: none;"></div>
+
+                <button type="submit" class="register-button" id="registerButton">
+                    Tạo tài khoản
+                </button>
+            </form>
+            <div class="register-footer">
+                <a href="index.html" class="link-button">Trở về đăng nhập</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>
+

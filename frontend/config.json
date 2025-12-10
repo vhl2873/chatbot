@@ -1,0 +1,44 @@
+{
+  "api": {
+    "host": "https://chatbot-api-g88f.onrender.com/chat",
+    "customHost": "https://7128-113-160-170-187.ngrok-free.app/chat"
+  },
+  "chatbots": [
+    {
+      "id": 1,
+      "name": "Viện KT&CN",
+      "image": "https://res.cloudinary.com/dknvsbuyy/image/upload/v1685678135/chat_1_c7eda483e3.png",
+      "primary": "#FFC107",
+      "bot_id": "ktcn"
+    },
+    {
+      "id": 2,
+      "name": "Trường Kinh Tế",
+      "image": "https://res.cloudinary.com/dknvsbuyy/image/upload/v1685709886/image_21_2e18bb4a61.png",
+      "primary": "#E53057",
+      "bot_id": "kt"
+    },
+    {
+      "id": 3,
+      "name": "Trường Sư Phạm",
+      "image": "https://res.cloudinary.com/dknvsbuyy/image/upload/v1685709886/image_22_409561b953.png",
+      "primary": "#3B96D2",
+      "bot_id": "sp"
+    },
+    {
+      "id": 4,
+      "name": "Viện Tài chính",
+      "image": "https://res.cloudinary.com/dknvsbuyy/image/upload/v1685709886/image_18_893d24cebc.png",
+      "primary": "#37474F",
+      "bot_id": "tc"
+    },
+    {
+      "id": 5,
+      "name": "Đại học Vinh",
+      "image": "https://res.cloudinary.com/dknvsbuyy/image/upload/v1685709886/image_23_211d7370cb.png",
+      "primary": "#2473FE",
+      "bot_id": "chung"
+    }
+  ]
+}
+

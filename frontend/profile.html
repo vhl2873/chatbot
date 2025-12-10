@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ - Chatbot Đại học Vinh</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-content">
+            <h1 class="profile-title">Hồ sơ</h1>
+
+            <div class="profile-section" id="profileSection">
+                <h2 class="section-title">Tài khoản</h2>
+                <div class="profile-card">
+                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2.5&w=256&h=256&q=80" 
+                         alt="Avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <h3 class="profile-name" id="profileName"></h3>
+                        <p class="profile-email" id="profileEmail"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2 class="section-title">Thông tin</h2>
+                <div class="info-card">
+                    <div class="info-row">
+                        <span class="info-label">Tên người dùng</span>
+                        <span class="info-value" id="infoUsername">N/A</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email</span>
+                        <span class="info-value" id="infoEmail">N/A</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Số điện thoại</span>
+                        <span class="info-value" id="infoPhone">N/A</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2 class="section-title">Tùy chọn</h2>
+                <div class="info-card">
+                    <button class="action-button" onclick="window.location.href='home.html'">Trang chủ</button>
+                    <button class="action-button" onclick="window.location.href='chat.html'">Chat</button>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <button class="logout-button" onclick="Auth.logout()">Đăng xuất</button>
+            </div>
+
+            <p class="app-version">App Version 2.24 #50491</p>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
+
