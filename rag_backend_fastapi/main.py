@@ -69,21 +69,30 @@ app.add_middleware(
 # Include routers
 app.include_router(router, prefix=settings.API_V1_PREFIX, tags=["RAG API"])
 
-# Mount static files
-static_dir = settings.BASE_DIR / "static"
-if static_dir.exists():
-    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+# Mount frontend static files (CSS, JS, images)
+frontend_dir = settings.BASE_DIR.parent / "frontend"
+if frontend_dir.exists():
+    # Mount CSS
+    css_dir = frontend_dir / "css"
+    if css_dir.exists():
+        app.mount("/css", StaticFiles(directory=str(css_dir)), name="css")
+    # Mount JS
+    js_dir = frontend_dir / "js"
+    if js_dir.exists():
+        app.mount("/js", StaticFiles(directory=str(js_dir)), name="js")
+    # Mount other static files
+    app.mount("/static", StaticFiles(directory=str(frontend_dir)), name="static")
 
-# Setup templates
-templates_dir = settings.BASE_DIR / "templates"
-index_html_path = templates_dir / "index.html" if templates_dir.exists() else None
+# Setup upload.html from frontend
+upload_html_path = frontend_dir / "upload.html" if frontend_dir.exists() else None
 
 
 @app.get("/", response_class=HTMLResponse)
+@app.get("/upload", response_class=HTMLResponse)
 async def root():
-    """Root endpoint - Serve web interface"""
-    if index_html_path and index_html_path.exists():
-        with open(index_html_path, "r", encoding="utf-8") as f:
+    """Root endpoint - Serve upload interface from frontend"""
+    if upload_html_path and upload_html_path.exists():
+        with open(upload_html_path, "r", encoding="utf-8") as f:
             return HTMLResponse(content=f.read())
     return HTMLResponse("""
     <html>
@@ -94,6 +103,7 @@ async def root():
             <p>Status: running</p>
             <p><a href="/docs">API Documentation</a></p>
             <p><a href="{}/health">Health Check</a></p>
+            <p><a href="/upload">Upload Interface</a></p>
         </body>
     </html>
     """.format(settings.APP_VERSION, settings.API_V1_PREFIX))

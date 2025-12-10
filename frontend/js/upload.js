@@ -1,4 +1,4 @@
-// API Base URL
+// API Base URL - Có thể cấu hình từ config
 const API_BASE = '/api/v1';
 
 // DOM Elements
